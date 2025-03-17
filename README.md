@@ -1,2 +1,2 @@
 # Spotify Data Analysis Tool
- A tool to analyze all-time listening data from Spotify. 
+Analyze your all-time listening data from Spotify in-depth to better know about your listening attributes. 
