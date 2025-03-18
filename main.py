@@ -42,3 +42,27 @@ print(data.describe())
 # Converting data to specific format
 
 data["endTime"] = pd.to_datetime(data["ts"])
+
+# Converting total play time to minutes 
+
+def get_total_play_time_minutes(data):
+    return data["ms_played"].sum() / (1000 * 60)
+
+# Functions
+
+# Calclate total listening time 
+
+def calculate_total_listening_time(data):
+    return data["ms_played"].sum() / (1000 * 60) # Convert ms to minutes
+
+# Find top items 
+
+def find_top_items(df, column, n=5):
+    return df[column].value_counts().head(n)
+
+# Find day with most listening 
+
+def most_listened_day(df):
+    df['date'] = pd.to_datetime(df['endTime']).dt.date
+    return df.groupby('daet')['ms_played'].sum().idxmax()
+

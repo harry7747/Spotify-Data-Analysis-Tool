@@ -1,0 +1,55 @@
+Requirements: 
+
+- Total Listening Time 
+- Total listening Time (Year-on-Year)
+- Daily total listening time (top 5)
+- Most streamed day 
+- Most streamed song
+- Most streamed artist
+- Most streamed genre
+- Top 5 most streamed songs
+- Top 5 most streamed artists
+- Top 5 most stremaed genres 
+
+Additional 
+
+(Some of these would be shown as optional for users)
+
+ Average Listening Time Per Day 
+ Listening Time by Hour of the Day
+ Listening Time by Day of the Week
+ Top Artist Trends Over Time
+ Top Song Trends Over Time 
+ Unique Artists & Songs Count 
+ Comparison Between Years 
+ Listening Streaks 
+
+-----------------------------------------
+
+Final:
+
+🔹 Daily Analysis
+
+📌 Daily total listening time (Top 5 days)
+📌 Most streamed day
+📌 Listening time by hour of the day (optional)
+📌 Listening time by day of the week (optional)
+📌 Listening streaks (optional)
+
+🔹 Yearly Analysis
+
+📌 Total listening time (Year-on-Year)
+📌 Comparison between years (increase/decrease in listening time) (optional)
+📌 Top artist trends over time (favorite artist each year/month) (optional)
+📌 Top song trends over time (favorite song each year/month) (optional)
+
+🔹 Most Streamed & Top Lists
+
+📌 Total listening time (all-time)
+📌 Most streamed song
+📌 Most streamed artist
+📌 Most streamed genre
+📌 Top 5 most streamed songs
+📌 Top 5 most streamed artists
+📌 Top 5 most streamed genres
+📌 Unique artists & songs count (listening diversity) (optional)
