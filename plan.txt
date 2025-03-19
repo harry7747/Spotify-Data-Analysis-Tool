@@ -49,7 +49,18 @@ Final:
 📌 Most streamed song
 📌 Most streamed artist
 📌 Most streamed genre
+📌 Most streamed album
 📌 Top 5 most streamed songs
 📌 Top 5 most streamed artists
 📌 Top 5 most streamed genres
+📌 Top 5 most streamed albums
+
+
+After-Dev Plans: 
+
+
 📌 Unique artists & songs count (listening diversity) (optional)
+
+- Unique Artists Percentage
+- One time Artists
+- Most diverse listening month 
