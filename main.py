@@ -1,7 +1,12 @@
 import pandas as pd
 import os
+import spotipy
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyClientCredentials
+
+# Authentication with Spotipy
+
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id = "163ab0a7ce0a444db7007c38cae05a0e", client_secret="967e59606b274e81b13d2b00ccbf1ef1"))
 
 # Cleaning and combining JSON files
 
@@ -145,4 +150,48 @@ def top_songs_each_year_with_counts(data):
 
     return top_songs_per_year
 
+
+# Most Streamed & Top Lists
+
+
+def total_listening_time(data):
+    return data["ms_played"].sum() / (1000 * 60)
+
+def most_streamed_song(data):
+    return data["master_metadata_track_name"].value_counts().idxmax()
+
+def most_streamed_artists(data):
+    return data["master_metadata_album_artist_name"].value_counts().idxmax()
+
+def most_streamed_albums(data):
+    return data["master_metadata_album_album_name"].value_counts().idxmax()
+
+# Fetching genre using Spotify's API 
+
+def get_genre(artist_name):
+    results = sp.search(q=artist_name, type='artist', limit=1)
+    if results["artists"]["items"]:  
+        return results["artists"]["items"][0]["genres"]  
+    return ["Unknown"]  
+
+def add_genres_to_data(data):
+    data["genre"] = data["master_metadata_album_artist_name"].apply(lambda artist: get_genre(artist)[0])
+    return data
+
+def most_streamed_genre(data):
+    return data["genre"].value_counts().idxmax()
+
+# Top 5 
+
+def top_5_streamed_songs(data, n=5):
+    return data.groupby("master_metadata_track_name")["ms_played"].sum().sort_values(ascending=False).head(n)
+
+def top_5_streamed_artists(data, n=5):
+    return data.groupby("master_metadata_album_artist_name")["ms_played"].sum().sort_values(ascending=False).head(n)
+
+def top_5_streamed_albums(data, n=5):
+    return data.groupby("master_metadata_album_album_name")["ms_played"].sum().sort_values(ascending=False).head(n)
+
+def top_5_streamed_genre(data, n=5):
+    return data.groupby("genre")["ms_played"].sum().sort_values(ascending=False).head(n)
 
