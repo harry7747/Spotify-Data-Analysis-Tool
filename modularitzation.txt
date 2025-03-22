@@ -1,0 +1,11 @@
+Spotify-Data-Analysis-Tool/
+│── main.py                    # Main script to run everything
+│── data_processing.py          # Functions for cleaning & processing data
+│── analytics.py                # Functions for calculating statistics
+│── visualization.py            # Functions for visualizing data
+│── spotipy_api.py              # Functions for fetching data from Spotify API
+│── utils.py                    # Utility/helper functions
+│── requirements.txt            # List of dependencies
+│── README.md                   # Project documentation
+
+
