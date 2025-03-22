@@ -1,0 +1,3 @@
+Plans: 
+
+- Displaying Spotify profile in the Web App 

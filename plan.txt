@@ -64,3 +64,40 @@ After-Dev Plans:
 - Unique Artists Percentage
 - One time Artists
 - Most diverse listening month 
+
+
+
+-----------------------------------------
+
+
+
+Visualization
+
+
+Text-Based Visualizations (Designed & Styled Output)
+
+🎶 Most Streamed Insights (Text + Cover Images)
+
+Most streamed song (with cover)
+Most streamed artist (with cover)
+Most streamed album (with cover)
+Most streamed genre
+
+📌 Top 5 Lists (Styled Text Output)
+
+Top 5 most streamed songs (with covers)
+Top 5 most streamed artists (with covers)
+Top 5 most streamed albums (with covers)
+Top 5 most streamed genres
+
+📊 Listening Habits & Diversity
+
+Total listening time
+Total listening time (Year-on-Year)
+Most streamed day
+Daily total listening time (top 5 days)
+Unique artists count (Listening diversity)
+Unique songs count (Listening diversity)
+
+
+
