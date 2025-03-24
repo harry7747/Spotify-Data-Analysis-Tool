@@ -1,29 +1,36 @@
 import pandas as pd
 import os
 
-def load_JSON_data(folder_path):
-    dataframes = []
 
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
-        df = pd.read_json(file_path)
-        dataframes.append(df)
+def load_data(folder_path):
+    print(f"📂 Received folder_path: {folder_path}")  # Debug print
 
-    return pd.conact(dataframes, ignore_index=True)
-
+    if not os.path.exists(folder_path):
+        print(f"❌ Error: File not found at {folder_path}")
+        return None 
+    
+    try:
+        data = pd.read_csv(folder_path)
+        print(f"✅ Data successfully loaded with {len(data)} rows")
+        return data 
+    except Exception as e:
+        print(f"❌ Error loading CSV: {e}")
+        return pd.DataFrame()
 
 def preprocess_data(data):
-    columns_to_read = ["ts", "ms_played", "master_metadata_track_name", "master_metadata_album_artist_name", "master_metadata_album_album_name"]
+    columns_to_read = ["endTime", "ms_played", "master_metadata_track_name", "master_metadata_album_artist_name", "master_metadata_album_album_name"]
 
-    data = data[columns_to_read]
+    data = data[columns_to_read].copy()
 
     data.rename(columns={"ts": "endTime"}, inplace=True)
-    data["endTime"] = pd.to_datetime(data["endTime"])
+    data.loc[:, "endTime"] = pd.to_datetime(data["endTime"])
+    data.fillna("Unknown", inplace=True)
 
+    print("✅ Preprocessing completed")
+    
     return data
 
-def save_data(data, file_path="combined_spotify_data.csv"):
-    data.to_csv(file_path, index=False)
-
+def save_data(data, folder_path="combined_spotify_data.csv"):
+    data.to_csv(folder_path, index=False)
 
     
