@@ -6,7 +6,7 @@ import matplotlib as plt
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyClientCredentials
 from IPython.display import display, HTML
-from analysis import most_streamed_artist, most_streamed_song, most_streamed_albums, most_streamed_genre, top_streamed_songs, top_streamed_artists, top_streamed_albums, top_streamed_genre, top_listening_days
+from analysis import most_streamed_artist, most_streamed_song, most_streamed_album, most_streamed_genre, top_streamed_songs, top_streamed_artists, top_streamed_albums, top_streamed_genre, top_listening_days
 from analysis import top_artists_each_year_with_counts, top_song_each_month_with_counts, top_songs_each_year_with_counts, total_listening_time, unique_artists_count, unique_songs_count
 from analysis import get_listening_time_by_day_of_week, get_change_in_listening_time_by_year, get_listening_time_by_year
 from analysis import get_daily_listening_time, get_most_listened_day, get_hourly_listening_time_for_day, get_listening_time_by_day_of_week, get_listening_streaks

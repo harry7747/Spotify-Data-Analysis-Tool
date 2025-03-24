@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Data Analysis</title>
+</head>
+<body>
+    <h1>🎵 Your Spotify Data Analysis</h1>
+    
+    <h2>Most Streamed Artist</h2>
+    <p><b>{{ top_artist }}</b> ({{ artist_minutes }} minutes)</p>
+
+    <h2>Most Streamed Song</h2>
+    <p><b>{{ top_song }}</b> ({{ song_minutes }} minutes)</p>
+
+    <h2>Total Listening Time</h2>
+    <p><b>{{ total_minutes }}</b> minutes of music played</p>
+
+    <h2>Top Genres</h2>
+    <ul>
+        {% for genre in top_streamed_genre %}
+            <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Top Albums</h2>
+    <ul>
+        {% for album in top_streamed_albums %}
+            <li>{{ album }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Top Songs</h2>
+    <ul>
+        {% for song in top_streamed_songs %}
+            <li>{{ song }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Unique Artists Count</h2>
+    <p><b>{{ unique_artists_count }}</b> unique artists</p>
+
+    <h2>Unique Songs Count</h2>
+    <p><b>{{ unique_songs_count }}</b> unique songs</p>
+</body>
+</html>
