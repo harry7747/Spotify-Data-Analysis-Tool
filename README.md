@@ -1,2 +1,5 @@
-# Spotify Data Analysis Tool
-Analyze your all-time listening data from Spotify in-depth to better know about your listening attributes. 
+This repository contains a comprehensive Spotify data analysis tool built in Python that processes personal Spotify listening history from CSV files. The project features a modular architecture with separate modules for data processing, analysis functions, and visualization capabilities, demonstrating clean code organization and separation of concerns.
+
+The tool provides extensive analytics including listening streaks, top artists/songs/albums across different time periods, daily and yearly listening patterns, and diversity metrics. It integrates seamlessly with the Spotify Web API using Spotipy to fetch artist metadata, genres, and cover images, implementing intelligent caching mechanisms that store artist-genre mappings in CSV format to optimize API calls and reduce redundant requests.
+
+The project includes both a Flask web application for interactive dashboards and rich HTML visualizations with album covers and artist images. Users can explore their music consumption patterns through detailed statistics, formatted listening time calculations, and visually appealing displays, making it a complete end-to-end solution for personal music analytics and insights.
